@@ -1,4 +1,4 @@
-package com.danishcaptain.gameengine.android.tictactoe;
+package com.danishcaptain.gameengine.android.core_api.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -66,7 +66,7 @@ public abstract class GameActivity extends AppCompatActivity {
 
         TableLayout boardTL = new TableLayout(this);
         //ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-       // boardTL.setLayoutParams(layoutParams);
+        // boardTL.setLayoutParams(layoutParams);
 //        boardGlyph.setBackgroundColor(Color.parseColor("#ffffff"));
         boardTL.setBackgroundColor(Color.parseColor("#000000"));
         for (int cols=0; cols<board.getCols(); cols++) {

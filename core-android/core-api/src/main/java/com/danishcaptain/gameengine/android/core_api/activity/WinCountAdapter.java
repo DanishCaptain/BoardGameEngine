@@ -1,4 +1,4 @@
-package com.danishcaptain.gameengine.android.tictactoe;
+package com.danishcaptain.gameengine.android.core_api.activity;
 
 import android.graphics.Color;
 import android.widget.TextView;

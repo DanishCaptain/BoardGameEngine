@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.danishcaptain.gameengine.android.tictactoe.GameActivity;
+import com.danishcaptain.gameengine.android.core_api.activity.GameActivity;
 import com.danishcaptain.gameengine.android.tictactoe.R;
 import com.danishcaptain.gameengine.android.tictactoe.rules.TicTacTocGameRules;
 import com.danishcaptain.gameengine.core.model.PlayerModel;
