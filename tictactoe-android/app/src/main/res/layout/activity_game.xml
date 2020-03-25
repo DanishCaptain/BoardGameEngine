@@ -9,21 +9,23 @@
 
         <Button
             android:id="@+id/button_1_1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="X"
             android:textColor="#F44336" />
 
         <Button
             android:id="@+id/button_1_2"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text=" " />
 
         <Button
             android:id="@+id/button_1_3"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=" " />
 
@@ -64,22 +66,23 @@
 
         <Button
             android:id="@+id/button_1_9"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=" " />
 
         <Button
             android:id="@+id/button_1_10"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=" " />
 
         <Button
             android:id="@+id/button_1_11"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="X" />
     </TableRow>
     <TableRow android:id="@+id/row2">
@@ -869,7 +872,7 @@
             android:id="@+id/button_11_11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#3F51B5"
+            android:layout_weight="1"
             android:text="X" />
     </TableRow>
 </TableLayout>

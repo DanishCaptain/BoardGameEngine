@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 //import android.widget.LinearLayout;
@@ -16,34 +18,48 @@ public abstract class GameActivity extends AppCompatActivity {
     protected final void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         GameEngine engine = GameEngine.getInstance();
-        engine.init(new GameBoard.Builder().initSize(11, 11).build());
+        engine.init(new GameBoard.Builder().initSize(getRowCount(), getColumnCount()).build());
         initView(engine.getGameBoard());
+        initBoard(engine.getGameBoard());
+        initRules(engine.getGameBoard());
 
     }
 
+    protected abstract void initBoard(GameBoard gameBoard);
+
+    protected abstract void initRules(GameBoard gameBoard);
+
+    protected abstract int getRowCount();
+    protected abstract int getColumnCount();
+
     private void initView(GameBoard board) {
-        TableLayout boardGlyph = new TableLayout(this);
+        TableLayout boardTL = new TableLayout(this);
+        //ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+       // boardTL.setLayoutParams(layoutParams);
 //        boardGlyph.setBackgroundColor(Color.parseColor("#ffffff"));
-        boardGlyph.setBackgroundColor(Color.parseColor("#000000"));
+        boardTL.setBackgroundColor(Color.parseColor("#000000"));
         for (int cols=0; cols<board.getCols(); cols++) {
-            ViewGroup.LayoutParams rowParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            TableRow rowGlyph = new TableRow(this);
-            rowGlyph.setPadding(0, 0, 0, 0);
-            rowGlyph.setLayoutParams(rowParams);
-            boardGlyph.addView(rowGlyph);
+            TableRow.LayoutParams rowParams = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+            TableRow rowTR = new TableRow(this);
+            boardTL.addView(rowTR);
+            rowTR.setBackgroundColor(Color.parseColor("#224488"));
+//            rowGlyph.setPadding(0, 0, 0, 0);
+            rowTR.setLayoutParams(rowParams);
             for (int rows=0; rows<board.getRows(); rows++) {
-                Button btn = new Button(this);
-                ViewGroup.LayoutParams btnParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                btn.setBackgroundColor(Color.parseColor("#ffffff"));
-                btn.setLayoutParams(btnParams);
-                btn.setText("X");
-                btn.setClickable(true);
-                btn.setPadding(0, 0, 0, 0);
-                rowGlyph.addView(btn);
+                BoardCell cell = board.lookupCell(rows, cols);
+                Button btnC = new Button(this);
+                rowTR.addView(btnC);
+                CellAdapter mgr = new CellAdapter(board, cell, btnC);
+                btnC.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
+                btnC.setClickable(true);
+//                btn.setPadding(0, 0, 0, 0);
             }
         }
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        setContentView(boardGlyph, layoutParams);
-        setContentView(R.layout.activity_game);
+
+        ScrollView scrollView = new ScrollView(this);
+        scrollView.setBackgroundColor(Color.parseColor("#ff4488"));
+        scrollView.addView(boardTL);
+        setContentView(scrollView);
+//        setContentView(R.layout.activity_game);
     }
 }
