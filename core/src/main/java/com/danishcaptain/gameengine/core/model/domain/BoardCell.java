@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class BoardCell {
     private final String id;
+    private String defaultDisplayValue="";
     private ViewUpdateListener viewUpdateListener;
     private BoardPiece piece;
     private CellAssignmentModel assignmentModel = new IgnoreAssignmentModel();
@@ -20,10 +21,27 @@ public class BoardCell {
         return id;
     }
 
+    public String getDefaultDisplayValue() {
+        return defaultDisplayValue;
+    }
+
+    public void setDefaultDisplayValue(String defaultDisplayValue) {
+        this.defaultDisplayValue = defaultDisplayValue;
+        if (viewUpdateListener != null) {
+            if (piece != null) {
+                viewUpdateListener.setDisplayText(piece.getDisplayId());
+            } else {
+                viewUpdateListener.setDisplayText(getDefaultDisplayValue());
+            }
+        }
+    }
+
     public void setViewUpdateListener(ViewUpdateListener lis) {
         viewUpdateListener = lis;
         if (piece != null) {
             viewUpdateListener.setDisplayText(piece.getDisplayId());
+        } else {
+            viewUpdateListener.setDisplayText(getDefaultDisplayValue());
         }
     }
 
@@ -34,7 +52,11 @@ public class BoardCell {
     public void set(BoardPiece piece) {
         this.piece = piece;
         if (viewUpdateListener != null) {
-            viewUpdateListener.setDisplayText(piece.getDisplayId());
+            if (piece != null) {
+                viewUpdateListener.setDisplayText(piece.getDisplayId());
+            } else {
+                viewUpdateListener.setDisplayText(getDefaultDisplayValue());
+            }
         }
         for (PieceUpdateListener lis : pieceUpdateListenerL) {
             lis.pieceUpdated(this, piece);

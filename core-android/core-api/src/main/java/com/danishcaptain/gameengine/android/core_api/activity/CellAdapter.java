@@ -18,6 +18,7 @@ public class CellAdapter implements View.OnTouchListener, ViewUpdateListener {
         this.cell = cell;
         this.button = button;
         cell.setViewUpdateListener(this);
+        button.setText(cell.getDefaultDisplayValue());
         button.setOnTouchListener(this);
     }
 

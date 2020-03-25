@@ -10,4 +10,5 @@ public abstract class BoardPiece {
     public String getDisplayId() {
         return displayId;
     }
+
 }
