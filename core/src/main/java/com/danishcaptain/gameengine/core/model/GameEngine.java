@@ -1,5 +1,7 @@
 package com.danishcaptain.gameengine.core.model;
 
+import com.danishcaptain.gameengine.core.model.domain.GameBoard;
+
 public final class GameEngine {
     private static GameEngine singleton;
     private GameBoard board;

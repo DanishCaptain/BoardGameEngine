@@ -1,4 +1,4 @@
-package com.danishcaptain.gameengine.android.tictactoe;
+package com.danishcaptain.gameengine.core.model.domain;
 
 public interface ViewUpdateListener {
     void setDisplayText(String cellDisplayText);

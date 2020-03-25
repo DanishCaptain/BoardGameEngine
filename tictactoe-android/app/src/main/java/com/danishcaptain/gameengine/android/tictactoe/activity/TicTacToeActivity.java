@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.danishcaptain.gameengine.android.tictactoe.BoardCell;
 import com.danishcaptain.gameengine.android.tictactoe.GameActivity;
-import com.danishcaptain.gameengine.android.tictactoe.GameBoard;
 import com.danishcaptain.gameengine.android.tictactoe.R;
-import com.danishcaptain.gameengine.android.tictactoe.RulesEngine;
 import com.danishcaptain.gameengine.android.tictactoe.rules.TicTacTocGameRules;
+import com.danishcaptain.gameengine.core.model.PlayerModel;
+import com.danishcaptain.gameengine.core.model.domain.BoardCell;
+import com.danishcaptain.gameengine.core.model.domain.GameBoard;
+import com.danishcaptain.gameengine.core.model.domain.Player;
+import com.danishcaptain.gameengine.core.model.domain.rules.CellImmutableWhenSet;
+import com.danishcaptain.gameengine.core.model.domain.rules.RulesEngine;
 
 import java.util.List;
 

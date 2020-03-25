@@ -3,10 +3,10 @@ package com.danishcaptain.gameengine.android.tictactoe;
 import android.graphics.Color;
 import android.widget.TextView;
 
-import com.danishcaptain.gameengine.android.tictactoe.activity.AddPlayerListener;
-import com.danishcaptain.gameengine.android.tictactoe.activity.Player;
-import com.danishcaptain.gameengine.android.tictactoe.activity.PlayerModel;
-import com.danishcaptain.gameengine.android.tictactoe.activity.WinCountListener;
+import com.danishcaptain.gameengine.core.model.PlayerModel;
+import com.danishcaptain.gameengine.core.model.domain.AddPlayerListener;
+import com.danishcaptain.gameengine.core.model.domain.Player;
+import com.danishcaptain.gameengine.core.model.domain.WinCountListener;
 
 public class WinCountAdapter implements AddPlayerListener, WinCountListener {
     private final PlayerModel model;

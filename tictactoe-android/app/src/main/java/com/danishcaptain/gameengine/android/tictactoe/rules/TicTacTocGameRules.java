@@ -1,12 +1,12 @@
 package com.danishcaptain.gameengine.android.tictactoe.rules;
 
-import com.danishcaptain.gameengine.android.tictactoe.BoardCell;
-import com.danishcaptain.gameengine.android.tictactoe.BoardPiece;
-import com.danishcaptain.gameengine.android.tictactoe.EndOfGameRule;
-import com.danishcaptain.gameengine.android.tictactoe.GameBoard;
-import com.danishcaptain.gameengine.android.tictactoe.PieceUpdateListener;
-import com.danishcaptain.gameengine.android.tictactoe.activity.Player;
 import com.danishcaptain.gameengine.android.tictactoe.model.TicTacToePiece;
+import com.danishcaptain.gameengine.core.model.domain.BoardCell;
+import com.danishcaptain.gameengine.core.model.domain.BoardPiece;
+import com.danishcaptain.gameengine.core.model.domain.GameBoard;
+import com.danishcaptain.gameengine.core.model.domain.PieceUpdateListener;
+import com.danishcaptain.gameengine.core.model.domain.Player;
+import com.danishcaptain.gameengine.core.model.domain.rules.EndOfGameRule;
 
 import java.util.List;
 

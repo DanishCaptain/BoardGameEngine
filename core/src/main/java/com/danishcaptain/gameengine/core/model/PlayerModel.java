@@ -1,9 +1,9 @@
-package com.danishcaptain.gameengine.android.tictactoe.activity;
+package com.danishcaptain.gameengine.core.model;
 
-import com.danishcaptain.gameengine.android.tictactoe.WinCountAdapter;
+import com.danishcaptain.gameengine.core.model.domain.AddPlayerListener;
+import com.danishcaptain.gameengine.core.model.domain.Player;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class PlayerModel {
     private Player currentPlayer;

@@ -1,7 +1,7 @@
 package com.danishcaptain.gameengine.android.tictactoe.model;
 
-import com.danishcaptain.gameengine.android.tictactoe.BoardPiece;
-import com.danishcaptain.gameengine.android.tictactoe.activity.Player;
+import com.danishcaptain.gameengine.core.model.domain.BoardPiece;
+import com.danishcaptain.gameengine.core.model.domain.Player;
 
 public class TicTacToePiece extends BoardPiece {
     private final Player player;

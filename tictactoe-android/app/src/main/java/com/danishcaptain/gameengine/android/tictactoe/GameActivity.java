@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.danishcaptain.gameengine.core.model.GameEngine;
+import com.danishcaptain.gameengine.core.model.domain.BoardCell;
+import com.danishcaptain.gameengine.core.model.domain.GameBoard;
+
 public abstract class GameActivity extends AppCompatActivity {
 
     @Override

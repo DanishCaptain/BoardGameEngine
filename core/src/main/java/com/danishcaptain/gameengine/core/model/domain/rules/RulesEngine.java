@@ -1,7 +1,7 @@
-package com.danishcaptain.gameengine.android.tictactoe;
+package com.danishcaptain.gameengine.core.model.domain.rules;
 
-import com.danishcaptain.gameengine.android.tictactoe.activity.CellRule;
-import com.danishcaptain.gameengine.android.tictactoe.activity.Player;
+import com.danishcaptain.gameengine.core.model.domain.BoardCell;
+import com.danishcaptain.gameengine.core.model.domain.GameBoard;
 
 import java.util.ArrayList;
 

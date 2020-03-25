@@ -1,7 +1,11 @@
 package com.danishcaptain.gameengine.core.model.domain;
 
+import com.danishcaptain.gameengine.core.model.PlayerModel;
+import com.danishcaptain.gameengine.core.model.domain.rules.RulesEngine;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class GameBoard {
     private final HashMap<String, BoardCell> cellsM = new HashMap<>();

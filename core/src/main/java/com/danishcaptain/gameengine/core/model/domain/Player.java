@@ -1,4 +1,4 @@
-package com.danishcaptain.gameengine.android.tictactoe.activity;
+package com.danishcaptain.gameengine.core.model.domain;
 
 import java.util.ArrayList;
 

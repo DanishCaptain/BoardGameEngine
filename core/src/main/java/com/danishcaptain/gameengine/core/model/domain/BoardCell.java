@@ -1,5 +1,8 @@
 package com.danishcaptain.gameengine.core.model.domain;
 
+import com.danishcaptain.gameengine.core.model.CellAssignmentModel;
+import com.danishcaptain.gameengine.core.model.IgnoreAssignmentModel;
+
 import java.util.ArrayList;
 
 public class BoardCell {

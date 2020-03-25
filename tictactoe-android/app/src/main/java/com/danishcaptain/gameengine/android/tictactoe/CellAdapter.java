@@ -4,6 +4,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.danishcaptain.gameengine.core.model.domain.BoardCell;
+import com.danishcaptain.gameengine.core.model.domain.GameBoard;
+import com.danishcaptain.gameengine.core.model.domain.ViewUpdateListener;
+
 public class CellAdapter implements View.OnTouchListener, ViewUpdateListener {
     private final GameBoard board;
     private final BoardCell cell;

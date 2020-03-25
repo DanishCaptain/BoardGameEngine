@@ -1,4 +1,4 @@
-package com.danishcaptain.gameengine.android.tictactoe.activity;
+package com.danishcaptain.gameengine.core.model.domain;
 
 public interface WinCountListener {
     void setNewWinCount(int winCount);

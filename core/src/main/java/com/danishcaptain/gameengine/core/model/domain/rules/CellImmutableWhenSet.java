@@ -1,6 +1,6 @@
-package com.danishcaptain.gameengine.android.tictactoe.activity;
+package com.danishcaptain.gameengine.core.model.domain.rules;
 
-import com.danishcaptain.gameengine.android.tictactoe.BoardCell;
+import com.danishcaptain.gameengine.core.model.domain.BoardCell;
 
 public class CellImmutableWhenSet extends CellRule {
     @Override
