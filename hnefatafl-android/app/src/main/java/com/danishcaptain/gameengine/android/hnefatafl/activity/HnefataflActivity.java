@@ -1,10 +1,12 @@
-package com.danishcaptain.gameengine.android.tictactoe;
+package com.danishcaptain.gameengine.android.hnefatafl.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.danishcaptain.gameengine.android.hnefatafl.R;
+
+public class HnefataflActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
