@@ -1,11 +1,7 @@
-package com.danishcaptain.gameengine.android.tictactoe;
-
-import com.danishcaptain.gameengine.android.tictactoe.activity.Player;
-import com.danishcaptain.gameengine.android.tictactoe.activity.PlayerModel;
+package com.danishcaptain.gameengine.core.model.domain;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class GameBoard {
     private final HashMap<String, BoardCell> cellsM = new HashMap<>();

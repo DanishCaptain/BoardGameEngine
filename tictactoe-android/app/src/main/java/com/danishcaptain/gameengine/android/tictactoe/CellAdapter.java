@@ -19,9 +19,10 @@ public class CellAdapter implements View.OnTouchListener, ViewUpdateListener {
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_UP) {
-            board.setSelected(cell);
-            board.checkWins();
+        if (!board.hasGameEnded()) {
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                board.setSelected(cell);
+            }
         }
         return true;
     }

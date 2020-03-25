@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-//import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,6 +33,33 @@ public abstract class GameActivity extends AppCompatActivity {
     protected abstract int getColumnCount();
 
     private void initView(GameBoard board) {
+        LinearLayout appLL = new LinearLayout(this);
+        ViewGroup.LayoutParams appParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        appLL.setLayoutParams(appParams);
+        appLL.setOrientation(LinearLayout.VERTICAL);
+
+        LinearLayout playersLL = new LinearLayout(this);
+        ViewGroup.LayoutParams playersParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        playersLL.setLayoutParams(playersParams);
+        appLL.addView(playersLL);
+        TextView p1View = new TextView(this);
+        p1View.setText("Player 1: ");
+        playersLL.addView(p1View);
+        TextView p1Count = new TextView(this);
+        new WinCountAdapter(board.getPlayerModel(), 1, p1View, p1Count);
+        playersLL.addView(p1Count);
+        TextView p2View = new TextView(this);
+        p2View.setText("      "+"Player 2: ");
+        playersLL.addView(p2View);
+        TextView p2Count = new TextView(this);
+        new WinCountAdapter(board.getPlayerModel(), 2, p2View, p2Count);
+        playersLL.addView(p2Count);
+
+        LinearLayout winLL = new LinearLayout(this);
+        ViewGroup.LayoutParams winParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        winLL.setLayoutParams(winParams);
+        appLL.addView(winLL);
+
         TableLayout boardTL = new TableLayout(this);
         //ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
        // boardTL.setLayoutParams(layoutParams);
@@ -59,7 +86,9 @@ public abstract class GameActivity extends AppCompatActivity {
         ScrollView scrollView = new ScrollView(this);
         scrollView.setBackgroundColor(Color.parseColor("#ff4488"));
         scrollView.addView(boardTL);
-        setContentView(scrollView);
+        appLL.addView(scrollView);
+
+        setContentView(appLL);
 //        setContentView(R.layout.activity_game);
     }
 }

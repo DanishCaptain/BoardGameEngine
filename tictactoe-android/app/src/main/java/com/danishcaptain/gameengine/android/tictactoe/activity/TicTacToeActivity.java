@@ -39,7 +39,7 @@ public class TicTacToeActivity extends GameActivity {
     protected void initRules(GameBoard gameBoard) {
         RulesEngine rules = gameBoard.getRules();
         rules.addRule(new CellImmutableWhenSet());
-        rules.addRule(new TicTacTocGameRules(gameBoard.getCells()));
+        rules.addRule(new TicTacTocGameRules(gameBoard, gameBoard.getCells()));
     }
 
 }
